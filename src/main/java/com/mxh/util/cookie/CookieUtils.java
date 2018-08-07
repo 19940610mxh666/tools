@@ -9,68 +9,68 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * cookie¹¤¾ßÀà
+ * cookieå·¥å…·ç±»
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç1:18:28 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ1:18:28 ç±»è¯´æ˜
  */
 public class CookieUtils {
 
 	/**
-	 * ÉèÖÃ Cookie£¨Éú³ÉÊ±¼äÎª1Ìì£©
+	 * è®¾ç½® Cookieï¼ˆç”Ÿæˆæ—¶é—´ä¸º1å¤©ï¼‰
 	 * 
 	 * @param name
-	 *            Ãû³Æ
+	 *            åç§°
 	 * @param value
-	 *            Öµ
+	 *            å€¼
 	 */
 	public static void setCookie(HttpServletResponse response, String name, String value) {
 		setCookie(response, name, value, 60 * 60 * 24);
 	}
 
 	/**
-	 * ÉèÖÃ Cookie
+	 * è®¾ç½® Cookie
 	 * 
 	 * @param name
-	 *            Ãû³Æ
+	 *            åç§°
 	 * @param value
-	 *            Öµ
+	 *            å€¼
 	 * @param maxAge
-	 *            Éú´æÊ±¼ä£¨µ¥Î»Ãë£©
+	 *            ç”Ÿå­˜æ—¶é—´ï¼ˆå•ä½ç§’ï¼‰
 	 * @param uri
-	 *            Â·¾¶
+	 *            è·¯å¾„
 	 */
 	public static void setCookie(HttpServletResponse response, String name, String value, String path) {
 		setCookie(response, name, value, path, 60 * 60 * 24);
 	}
 
 	/**
-	 * ÉèÖÃ Cookie
+	 * è®¾ç½® Cookie
 	 * 
 	 * @param name
-	 *            Ãû³Æ
+	 *            åç§°
 	 * @param value
-	 *            Öµ
+	 *            å€¼
 	 * @param maxAge
-	 *            Éú´æÊ±¼ä£¨µ¥Î»Ãë£©
+	 *            ç”Ÿå­˜æ—¶é—´ï¼ˆå•ä½ç§’ï¼‰
 	 * @param uri
-	 *            Â·¾¶
+	 *            è·¯å¾„
 	 */
 	public static void setCookie(HttpServletResponse response, String name, String value, int maxAge) {
 		setCookie(response, name, value, "/", maxAge);
 	}
 
 	/**
-	 * ÉèÖÃ Cookie
+	 * è®¾ç½® Cookie
 	 * 
 	 * @param name
-	 *            Ãû³Æ
+	 *            åç§°
 	 * @param value
-	 *            Öµ
+	 *            å€¼
 	 * @param maxAge
-	 *            Éú´æÊ±¼ä£¨µ¥Î»Ãë£©
+	 *            ç”Ÿå­˜æ—¶é—´ï¼ˆå•ä½ç§’ï¼‰
 	 * @param uri
-	 *            Â·¾¶
+	 *            è·¯å¾„
 	 */
 	public static void setCookie(HttpServletResponse response, String name, String value, String path, int maxAge) {
 		Cookie cookie = new Cookie(name, null);
@@ -85,39 +85,39 @@ public class CookieUtils {
 	}
 
 	/**
-	 * »ñµÃÖ¸¶¨CookieµÄÖµ
+	 * è·å¾—æŒ‡å®šCookieçš„å€¼
 	 * 
 	 * @param name
-	 *            Ãû³Æ
-	 * @return Öµ
+	 *            åç§°
+	 * @return å€¼
 	 */
 	public static String getCookie(HttpServletRequest request, String name) {
 		return getCookie(request, null, name, false);
 	}
 
 	/**
-	 * »ñµÃÖ¸¶¨CookieµÄÖµ£¬²¢É¾³ı¡£
+	 * è·å¾—æŒ‡å®šCookieçš„å€¼ï¼Œå¹¶åˆ é™¤ã€‚
 	 * 
 	 * @param name
-	 *            Ãû³Æ
-	 * @return Öµ
+	 *            åç§°
+	 * @return å€¼
 	 */
 	public static String getCookie(HttpServletRequest request, HttpServletResponse response, String name) {
 		return getCookie(request, response, name, true);
 	}
 
 	/**
-	 * »ñµÃÖ¸¶¨CookieµÄÖµ
+	 * è·å¾—æŒ‡å®šCookieçš„å€¼
 	 * 
 	 * @param request
-	 *            ÇëÇó¶ÔÏó
+	 *            è¯·æ±‚å¯¹è±¡
 	 * @param response
-	 *            ÏìÓ¦¶ÔÏó
+	 *            å“åº”å¯¹è±¡
 	 * @param name
-	 *            Ãû×Ö
+	 *            åå­—
 	 * @param isRemove
-	 *            ÊÇ·ñÒÆ³ı
-	 * @return Öµ
+	 *            æ˜¯å¦ç§»é™¤
+	 * @return å€¼
 	 */
 	public static String getCookie(HttpServletRequest request, HttpServletResponse response, String name,
 			boolean isRemove) {

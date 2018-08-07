@@ -15,60 +15,60 @@ import com.mxh.util.propertiesUtils.PropertiesLoader;
 
 
 /**
- * È«¾ÖÅäÖÃÀà
+ * å…¨å±€é…ç½®ç±»
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç1:22:16 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ1:22:16 ç±»è¯´æ˜
  */
 public class Global {
 
 	/**
-	 * µ±Ç°¶ÔÏóÊµÀı
+	 * å½“å‰å¯¹è±¡å®ä¾‹
 	 */
 	private static Global global = new Global();
 
 	/**
-	 * ±£´æÈ«¾ÖÊôĞÔÖµ
+	 * ä¿å­˜å…¨å±€å±æ€§å€¼
 	 */
 	private static Map<String, String> map = Maps.newHashMap();
 
 	/**
-	 * ÊôĞÔÎÄ¼ş¼ÓÔØ¶ÔÏó
+	 * å±æ€§æ–‡ä»¶åŠ è½½å¯¹è±¡
 	 */
 	private static PropertiesLoader loader = new PropertiesLoader("jeesite.properties");
 
 	/**
-	 * ÏÔÊ¾/Òş²Ø
+	 * æ˜¾ç¤º/éšè—
 	 */
 	public static final String SHOW = "1";
 	public static final String HIDE = "0";
 
 	/**
-	 * ÊÇ/·ñ
+	 * æ˜¯/å¦
 	 */
 	public static final String YES = "1";
 	public static final String NO = "0";
 
 	/**
-	 * ¶Ô/´í
+	 * å¯¹/é”™
 	 */
 	public static final String TRUE = "true";
 	public static final String FALSE = "false";
 
 	/**
-	 * ÉÏ´«ÎÄ¼ş»ù´¡ĞéÄâÂ·¾¶
+	 * ä¸Šä¼ æ–‡ä»¶åŸºç¡€è™šæ‹Ÿè·¯å¾„
 	 */
 	public static final String USERFILES_BASE_URL = "/userfiles/";
 
 	/**
-	 * »ñÈ¡µ±Ç°¶ÔÏóÊµÀı
+	 * è·å–å½“å‰å¯¹è±¡å®ä¾‹
 	 */
 	public static Global getInstance() {
 		return global;
 	}
 
 	/**
-	 * »ñÈ¡ÅäÖÃ
+	 * è·å–é…ç½®
 	 * 
 	 * @see ${fns:getConfig('adminPath')}
 	 */
@@ -82,28 +82,28 @@ public class Global {
 	}
 
 	/**
-	 * »ñÈ¡¹ÜÀí¶Ë¸ùÂ·¾¶
+	 * è·å–ç®¡ç†ç«¯æ ¹è·¯å¾„
 	 */
 	public static String getAdminPath() {
 		return getConfig("adminPath");
 	}
 
 	/**
-	 * »ñÈ¡Ç°¶Ë¸ùÂ·¾¶
+	 * è·å–å‰ç«¯æ ¹è·¯å¾„
 	 */
 	public static String getFrontPath() {
 		return getConfig("frontPath");
 	}
 
 	/**
-	 * »ñÈ¡URLºó×º
+	 * è·å–URLåç¼€
 	 */
 	public static String getUrlSuffix() {
 		return getConfig("urlSuffix");
 	}
 
 	/**
-	 * ÊÇ·ñÊÇÑİÊ¾Ä£Ê½£¬ÑİÊ¾Ä£Ê½ÏÂ²»ÄÜĞŞ¸ÄÓÃ»§¡¢½ÇÉ«¡¢ÃÜÂë¡¢²Ëµ¥¡¢ÊÚÈ¨
+	 * æ˜¯å¦æ˜¯æ¼”ç¤ºæ¨¡å¼ï¼Œæ¼”ç¤ºæ¨¡å¼ä¸‹ä¸èƒ½ä¿®æ”¹ç”¨æˆ·ã€è§’è‰²ã€å¯†ç ã€èœå•ã€æˆæƒ
 	 */
 	public static Boolean isDemoMode() {
 		String dm = getConfig("demoMode");
@@ -111,7 +111,7 @@ public class Global {
 	}
 
 	/**
-	 * ÔÚĞŞ¸ÄÏµÍ³ÓÃ»§ºÍ½ÇÉ«Ê±ÊÇ·ñÍ¬²½µ½Activiti
+	 * åœ¨ä¿®æ”¹ç³»ç»Ÿç”¨æˆ·å’Œè§’è‰²æ—¶æ˜¯å¦åŒæ­¥åˆ°Activiti
 	 */
 	public static Boolean isSynActivitiIndetity() {
 		String dm = getConfig("activiti.isSynActivitiIndetity");
@@ -119,7 +119,7 @@ public class Global {
 	}
 
 	/**
-	 * Ò³Ãæ»ñÈ¡³£Á¿
+	 * é¡µé¢è·å–å¸¸é‡
 	 * 
 	 * @see ${fns:getConst('YES')}
 	 */
@@ -127,20 +127,20 @@ public class Global {
 		try {
 			return Global.class.getField(field).get(null);
 		} catch (Exception e) {
-			// Òì³£´ú±íÎŞÅäÖÃ£¬ÕâÀïÊ²Ã´Ò²²»×ö
+			// å¼‚å¸¸ä»£è¡¨æ— é…ç½®ï¼Œè¿™é‡Œä»€ä¹ˆä¹Ÿä¸åš
 		}
 		return null;
 	}
 
 	/**
-	 * »ñÈ¡ÉÏ´«ÎÄ¼şµÄ¸ùÄ¿Â¼
+	 * è·å–ä¸Šä¼ æ–‡ä»¶çš„æ ¹ç›®å½•
 	 * 
 	 * @return
 	 */
 	public static String getUserfilesBaseDir() {
-		Properties props = System.getProperties(); // »ñµÃÏµÍ³ÊôĞÔ¼¯
+		Properties props = System.getProperties(); // è·å¾—ç³»ç»Ÿå±æ€§é›†
 		String sysName = props.getProperty("os.name");
-		System.out.println(sysName + "ÏµÍ³");
+		System.out.println(sysName + "ç³»ç»Ÿ");
 		String dir;
 		if (sysName != null && sysName.contains("Windows")) {
 			dir = getConfig("userfiles.basedir");
@@ -162,12 +162,12 @@ public class Global {
 	}
 
 	/**
-	 * »ñÈ¡¹¤³ÌÂ·¾¶
+	 * è·å–å·¥ç¨‹è·¯å¾„
 	 * 
 	 * @return
 	 */
 	public static String getProjectPath() {
-		// Èç¹ûÅäÖÃÁË¹¤³ÌÂ·¾¶£¬ÔòÖ±½Ó·µ»Ø£¬·ñÔò×Ô¶¯»ñÈ¡¡£
+		// å¦‚æœé…ç½®äº†å·¥ç¨‹è·¯å¾„ï¼Œåˆ™ç›´æ¥è¿”å›ï¼Œå¦åˆ™è‡ªåŠ¨è·å–ã€‚
 		String projectPath = Global.getConfig("projectPath");
 		if (StringUtils.isNotBlank(projectPath)) {
 			return projectPath;
@@ -194,16 +194,16 @@ public class Global {
 		return projectPath;
 	}
 
-	// ÓÊÏäÅäÖÃ
+	// é‚®ç®±é…ç½®
 	public static EmailBean getEmail() {
 		EmailBean mb = new EmailBean();
 		System.out.println(getConfig("sender.host"));
-		mb.setHost(getConfig("sender.host")); // ÉèÖÃSMTPÖ÷»ú(163)£¬ÈôÓÃ126£¬ÔòÉèÎª£ºsmtp.126.com
-		mb.setUsername(getConfig("sender.userNAme")); // ÉèÖÃ·¢¼şÈËÓÊÏäµÄÓÃ»§Ãû
-		mb.setPassword(getConfig("sender.password")); // ÉèÖÃ·¢¼şÈËÓÊÏäµÄÃÜÂë£¬Ğè½«*ºÅ¸Ä³ÉÕıÈ·µÄÃÜÂë
-		mb.setFrom(getConfig("sender.userNAme")); // ÉèÖÃ·¢¼şÈËµÄÓÊÏä
-		mb.setSubject("²Õµ¥"); // ÉèÖÃÓÊ¼şµÄÖ÷Ìâ
-		mb.setContent("²Õµ¥"); // ÉèÖÃÓÊ¼şµÄÕıÎÄ
+		mb.setHost(getConfig("sender.host")); // è®¾ç½®SMTPä¸»æœº(163)ï¼Œè‹¥ç”¨126ï¼Œåˆ™è®¾ä¸ºï¼šsmtp.126.com
+		mb.setUsername(getConfig("sender.userNAme")); // è®¾ç½®å‘ä»¶äººé‚®ç®±çš„ç”¨æˆ·å
+		mb.setPassword(getConfig("sender.password")); // è®¾ç½®å‘ä»¶äººé‚®ç®±çš„å¯†ç ï¼Œéœ€å°†*å·æ”¹æˆæ­£ç¡®çš„å¯†ç 
+		mb.setFrom(getConfig("sender.userNAme")); // è®¾ç½®å‘ä»¶äººçš„é‚®ç®±
+		mb.setSubject("èˆ±å•"); // è®¾ç½®é‚®ä»¶çš„ä¸»é¢˜
+		mb.setContent("èˆ±å•"); // è®¾ç½®é‚®ä»¶çš„æ­£æ–‡
 		return mb;
 	}
 }

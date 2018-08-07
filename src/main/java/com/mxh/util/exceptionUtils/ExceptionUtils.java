@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç1:32:39 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ1:32:39 ç±»è¯´æ˜
  */
 public class ExceptionUtils {
 
 	/**
-	 * ½«CheckedException×ª»»ÎªUncheckedException.
+	 * å°†CheckedExceptionè½¬æ¢ä¸ºUncheckedException.
 	 */
 	public static RuntimeException unchecked(Exception e) {
 		if (e instanceof RuntimeException) {
@@ -23,7 +23,7 @@ public class ExceptionUtils {
 	}
 
 	/**
-	 * ½«ErrorStack×ª»¯ÎªString.
+	 * å°†ErrorStackè½¬åŒ–ä¸ºString.
 	 */
 	public static String getStackTraceAsString(Throwable e) {
 		if (e == null) {
@@ -35,7 +35,7 @@ public class ExceptionUtils {
 	}
 
 	/**
-	 * ÅĞ¶ÏÒì³£ÊÇ·ñÓÉÄ³Ğ©µ×²ãµÄÒì³£ÒıÆğ.
+	 * åˆ¤æ–­å¼‚å¸¸æ˜¯å¦ç”±æŸäº›åº•å±‚çš„å¼‚å¸¸å¼•èµ·.
 	 */
 	public static boolean isCausedBy(Exception ex, Class<? extends Exception>... causeExceptionClasses) {
 		Throwable cause = ex.getCause();
@@ -51,7 +51,7 @@ public class ExceptionUtils {
 	}
 
 	/**
-	 * ÔÚrequestÖĞ»ñÈ¡Òì³£Àà
+	 * åœ¨requestä¸­è·å–å¼‚å¸¸ç±»
 	 * 
 	 * @param request
 	 * @return

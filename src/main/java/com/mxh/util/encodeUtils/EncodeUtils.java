@@ -12,24 +12,24 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import com.mxh.util.exceptionUtils.ExceptionUtils;
 
 /**
- * ±àÂë¹¤¾ß
+ * ç¼–ç å·¥å…·
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç1:27:27 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ1:27:27 ç±»è¯´æ˜
  */
 public class EncodeUtils {
 	private static final String DEFAULT_URL_ENCODING = "UTF-8";
 	private static final char[] BASE62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
 
 	/**
-	 * Hex±àÂë.
+	 * Hexç¼–ç .
 	 */
 	public static String encodeHex(byte[] input) {
 		return new String(Hex.encodeHex(input));
 	}
 
 	/**
-	 * Hex½âÂë.
+	 * Hexè§£ç .
 	 */
 	public static byte[] decodeHex(String input) {
 		try {
@@ -40,14 +40,14 @@ public class EncodeUtils {
 	}
 
 	/**
-	 * Base64±àÂë.
+	 * Base64ç¼–ç .
 	 */
 	public static String encodeBase64(byte[] input) {
 		return new String(Base64.encodeBase64(input));
 	}
 
 	/**
-	 * Base64±àÂë.
+	 * Base64ç¼–ç .
 	 */
 	public static String encodeBase64(String input) {
 		try {
@@ -58,21 +58,21 @@ public class EncodeUtils {
 	}
 
 	// /**
-	// * Base64±àÂë, URL°²È«(½«Base64ÖĞµÄURL·Ç·¨×Ö·û'+'ºÍ'/'×ªÎª'-'ºÍ'_', ¼ûRFC3548).
+	// * Base64ç¼–ç , URLå®‰å…¨(å°†Base64ä¸­çš„URLéæ³•å­—ç¬¦'+'å’Œ'/'è½¬ä¸º'-'å’Œ'_', è§RFC3548).
 	// */
 	// public static String encodeUrlSafeBase64(byte[] input) {
 	// return Base64.encodeBase64URLSafe(input);
 	// }
 
 	/**
-	 * Base64½âÂë.
+	 * Base64è§£ç .
 	 */
 	public static byte[] decodeBase64(String input) {
 		return Base64.decodeBase64(input.getBytes());
 	}
 
 	/**
-	 * Base64½âÂë.
+	 * Base64è§£ç .
 	 */
 	public static String decodeBase64String(String input) {
 		try {
@@ -83,7 +83,7 @@ public class EncodeUtils {
 	}
 
 	/**
-	 * Base62±àÂë¡£
+	 * Base62ç¼–ç ã€‚
 	 */
 	public static String encodeBase62(byte[] input) {
 		char[] chars = new char[input.length];
@@ -94,35 +94,35 @@ public class EncodeUtils {
 	}
 
 	/**
-	 * Html ×ªÂë.
+	 * Html è½¬ç .
 	 */
 	public static String escapeHtml(String html) {
 		return StringEscapeUtils.escapeHtml4(html);
 	}
 
 	/**
-	 * Html ½âÂë.
+	 * Html è§£ç .
 	 */
 	public static String unescapeHtml(String htmlEscaped) {
 		return StringEscapeUtils.unescapeHtml4(htmlEscaped);
 	}
 
 	/**
-	 * Xml ×ªÂë.
+	 * Xml è½¬ç .
 	 */
 	public static String escapeXml(String xml) {
 		return StringEscapeUtils.escapeXml10(xml);
 	}
 
 	/**
-	 * Xml ½âÂë.
+	 * Xml è§£ç .
 	 */
 	public static String unescapeXml(String xmlEscaped) {
 		return StringEscapeUtils.unescapeXml(xmlEscaped);
 	}
 
 	/**
-	 * URL ±àÂë, EncodeÄ¬ÈÏÎªUTF-8.
+	 * URL ç¼–ç , Encodeé»˜è®¤ä¸ºUTF-8.
 	 */
 	public static String urlEncode(String part) {
 		try {
@@ -133,7 +133,7 @@ public class EncodeUtils {
 	}
 
 	/**
-	 * URL ½âÂë, EncodeÄ¬ÈÏÎªUTF-8.
+	 * URL è§£ç , Encodeé»˜è®¤ä¸ºUTF-8.
 	 */
 	public static String urlDecode(String part) {
 

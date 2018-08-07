@@ -1,10 +1,10 @@
 package com.mxh.util.excelUtils;
 
 /**
- * Éú³Éexcel±í¸ñ
+ * ç”Ÿæˆexcelè¡¨æ ¼å·¥å…·
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç12:28:51 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ12:28:51 ç±»è¯´æ˜
  */
 public class ExcelUtils {
 

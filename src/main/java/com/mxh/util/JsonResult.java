@@ -1,17 +1,17 @@
 package com.mxh.util;
 
 /**
- * ·â×° ·µ»Ø¸øÇ°¶ËµÄ½á¹û
+ * å°è£… è¿”å›ç»™å‰ç«¯çš„ç»“æœ
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç12:22:01 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ12:22:01 ç±»è¯´æ˜
  */
 public class JsonResult<T> {
-	//ÊÇ·ñ³É¹¦
+	//æ˜¯å¦æˆåŠŸ
 	private boolean success;
-	//³É¹¦Ê±·µ»ØµÄÀàĞÍ
+	//æˆåŠŸæ—¶è¿”å›çš„ç±»å‹
 	private T data;
-	//´íÎóĞÅÏ¢
+	//é”™è¯¯ä¿¡æ¯
 	private String error;
 
 	public JsonResult(boolean success, T data) {

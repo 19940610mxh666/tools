@@ -3,21 +3,21 @@ package com.mxh.util.mailUtils;
 import java.util.Vector;
 
 /**
- * ÓÊ¼şÀà
+ * é‚®ä»¶ç±»
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç1:24:48 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ1:24:48 ç±»è¯´æ˜
  */
 public class EmailBean {
-	private String to; // ÊÕ¼şÈË
-	private String from; // ·¢¼şÈË
-	private String host; // SMTPÖ÷»ú
-	private String username; // ·¢¼şÈËµÄÓÃ»§Ãû
-	private String password; // ·¢¼şÈËµÄÃÜÂë
-	private String subject; // ÓÊ¼şÖ÷Ìâ
-	private String content; // ÓÊ¼şÕıÎÄ
-	Vector<String> file; // ¶à¸ö¸½¼ş
-	private String filename; // ¸½¼şµÄÎÄ¼şÃû
+	private String to; // æ”¶ä»¶äºº
+	private String from; // å‘ä»¶äºº
+	private String host; // SMTPä¸»æœº
+	private String username; // å‘ä»¶äººçš„ç”¨æˆ·å
+	private String password; // å‘ä»¶äººçš„å¯†ç 
+	private String subject; // é‚®ä»¶ä¸»é¢˜
+	private String content; // é‚®ä»¶æ­£æ–‡
+	Vector<String> file; // å¤šä¸ªé™„ä»¶
+	private String filename; // é™„ä»¶çš„æ–‡ä»¶å
 
 	public String getTo() {
 		return to;

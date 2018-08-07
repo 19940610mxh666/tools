@@ -14,60 +14,60 @@ import com.mxh.util.Global.Global;
 import com.mxh.util.cookie.CookieUtils;
 
 /**
- * ·ÖÒ³
+ * åˆ†é¡µ
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç12:38:58 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ12:38:58 ç±»è¯´æ˜
  * @param <T>
  */
 public class Page<T> {
-	private int pageNo = 1; // µ±Ç°Ò³Âë
-	private int pageSize = Integer.valueOf(Global.getConfig("page.pageSize")); // Ò³Ãæ´óĞ¡£¬ÉèÖÃÎª¡°-1¡±±íÊ¾²»½øĞĞ·ÖÒ³£¨·ÖÒ³ÎŞĞ§£©
+	private int pageNo = 1; // å½“å‰é¡µç 
+	private int pageSize = Integer.valueOf(Global.getConfig("page.pageSize")); // é¡µé¢å¤§å°ï¼Œè®¾ç½®ä¸ºâ€œ-1â€è¡¨ç¤ºä¸è¿›è¡Œåˆ†é¡µï¼ˆåˆ†é¡µæ— æ•ˆï¼‰
 	
-	private long count;// ×Ü¼ÇÂ¼Êı£¬ÉèÖÃÎª¡°-1¡±±íÊ¾²»²éÑ¯×ÜÊı
+	private long count;// æ€»è®°å½•æ•°ï¼Œè®¾ç½®ä¸ºâ€œ-1â€è¡¨ç¤ºä¸æŸ¥è¯¢æ€»æ•°
 	
-	private int first;// Ê×Ò³Ë÷Òı
-	private int last;// Î²Ò³Ë÷Òı
-	private int prev;// ÉÏÒ»Ò³Ë÷Òı
-	private int next;// ÏÂÒ»Ò³Ë÷Òı
+	private int first;// é¦–é¡µç´¢å¼•
+	private int last;// å°¾é¡µç´¢å¼•
+	private int prev;// ä¸Šä¸€é¡µç´¢å¼•
+	private int next;// ä¸‹ä¸€é¡µç´¢å¼•
 	
-	private boolean firstPage;//ÊÇ·ñÊÇµÚÒ»Ò³
-	private boolean lastPage;//ÊÇ·ñÊÇ×îºóÒ»Ò³
+	private boolean firstPage;//æ˜¯å¦æ˜¯ç¬¬ä¸€é¡µ
+	private boolean lastPage;//æ˜¯å¦æ˜¯æœ€åä¸€é¡µ
 
-	private int length = 8;// ÏÔÊ¾Ò³Ãæ³¤¶È
-	private int slider = 1;// Ç°ºóÏÔÊ¾Ò³Ãæ³¤¶È
+	private int length = 8;// æ˜¾ç¤ºé¡µé¢é•¿åº¦
+	private int slider = 1;// å‰åæ˜¾ç¤ºé¡µé¢é•¿åº¦
 	
 	private List<T> list = new ArrayList<T>();
 	
-	private String orderBy = ""; // ±ê×¼²éÑ¯ÓĞĞ§£¬ ÊµÀı£º updatedate desc, name asc
+	private String orderBy = ""; // æ ‡å‡†æŸ¥è¯¢æœ‰æ•ˆï¼Œ å®ä¾‹ï¼š updatedate desc, name asc
 
-	private String funcName = "page"; // ÉèÖÃµã»÷Ò³Âëµ÷ÓÃµÄjsº¯ÊıÃû³Æ£¬Ä¬ÈÏÎªpage£¬ÔÚÒ»Ò³ÓĞ¶à¸ö·ÖÒ³¶ÔÏóÊ±Ê¹ÓÃ¡£
+	private String funcName = "page"; // è®¾ç½®ç‚¹å‡»é¡µç è°ƒç”¨çš„jså‡½æ•°åç§°ï¼Œé»˜è®¤ä¸ºpageï¼Œåœ¨ä¸€é¡µæœ‰å¤šä¸ªåˆ†é¡µå¯¹è±¡æ—¶ä½¿ç”¨ã€‚
 	
-	private String funcParam = ""; // º¯ÊıµÄ¸½¼Ó²ÎÊı£¬µÚÈı¸ö²ÎÊıÖµ¡£
+	private String funcParam = ""; // å‡½æ•°çš„é™„åŠ å‚æ•°ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°å€¼ã€‚
 	
-	private String message = ""; // ÉèÖÃÌáÊ¾ÏûÏ¢£¬ÏÔÊ¾ÔÚ¡°¹²nÌõ¡±Ö®ºó
+	private String message = ""; // è®¾ç½®æç¤ºæ¶ˆæ¯ï¼Œæ˜¾ç¤ºåœ¨â€œå…±næ¡â€ä¹‹å
 
 	public Page() {
 		this.pageSize = -1;
 	}
 	
 	/**
-	 * ¹¹Ôì·½·¨
-	 * @param request ´«µİ repage ²ÎÊı£¬À´¼Ç×¡Ò³Âë
-	 * @param response ÓÃÓÚÉèÖÃ Cookie£¬¼Ç×¡Ò³Âë
+	 * æ„é€ æ–¹æ³•
+	 * @param request ä¼ é€’ repage å‚æ•°ï¼Œæ¥è®°ä½é¡µç 
+	 * @param response ç”¨äºè®¾ç½® Cookieï¼Œè®°ä½é¡µç 
 	 */
 	public Page(HttpServletRequest request, HttpServletResponse response){
 		this(request, response, -2);
 	}
 
 	/**
-	 * ¹¹Ôì·½·¨
-	 * @param request ´«µİ repage ²ÎÊı£¬À´¼Ç×¡Ò³Âë
-	 * @param response ÓÃÓÚÉèÖÃ Cookie£¬¼Ç×¡Ò³Âë
-	 * @param defaultPageSize Ä¬ÈÏ·ÖÒ³´óĞ¡£¬Èç¹û´«µİ -1 ÔòÎª²»·ÖÒ³£¬·µ»ØËùÓĞÊı¾İ
+	 * æ„é€ æ–¹æ³•
+	 * @param request ä¼ é€’ repage å‚æ•°ï¼Œæ¥è®°ä½é¡µç 
+	 * @param response ç”¨äºè®¾ç½® Cookieï¼Œè®°ä½é¡µç 
+	 * @param defaultPageSize é»˜è®¤åˆ†é¡µå¤§å°ï¼Œå¦‚æœä¼ é€’ -1 åˆ™ä¸ºä¸åˆ†é¡µï¼Œè¿”å›æ‰€æœ‰æ•°æ®
 	 */
 	public Page(HttpServletRequest request, HttpServletResponse response, int defaultPageSize){
-		// ÉèÖÃÒ³Âë²ÎÊı£¨´«µİrepage²ÎÊı£¬À´¼Ç×¡Ò³Âë£©
+		// è®¾ç½®é¡µç å‚æ•°ï¼ˆä¼ é€’repageå‚æ•°ï¼Œæ¥è®°ä½é¡µç ï¼‰
 		String no = request.getParameter("pageNo");
 		if (StringUtils.isNumeric(no)){
 			CookieUtils.setCookie(response, "pageNo", no);
@@ -78,7 +78,7 @@ public class Page<T> {
 				this.setPageNo(Integer.parseInt(no));
 			}
 		}
-		// ÉèÖÃÒ³Ãæ´óĞ¡²ÎÊı£¨´«µİrepage²ÎÊı£¬À´¼Ç×¡Ò³Âë´óĞ¡£©
+		// è®¾ç½®é¡µé¢å¤§å°å‚æ•°ï¼ˆä¼ é€’repageå‚æ•°ï¼Œæ¥è®°ä½é¡µç å¤§å°ï¼‰
 		String size = request.getParameter("pageSize");
 		if (StringUtils.isNumeric(size)){
 			CookieUtils.setCookie(response, "pageSize", size);
@@ -91,7 +91,7 @@ public class Page<T> {
 		}else if (defaultPageSize != -2){
 			this.pageSize = defaultPageSize;
 		}
-		// ÉèÖÃÒ³Ãæ·ÖÒ³º¯Êı
+		// è®¾ç½®é¡µé¢åˆ†é¡µå‡½æ•°
         String funcName = request.getParameter("funcName");
         if (StringUtils.isNotBlank(funcName)){
             CookieUtils.setCookie(response, "funcName", funcName);
@@ -102,7 +102,7 @@ public class Page<T> {
                 this.setFuncName(funcName);
             }
         }
-		// ÉèÖÃÅÅĞò²ÎÊı
+		// è®¾ç½®æ’åºå‚æ•°
 		String orderBy = request.getParameter("orderBy");
 		if (StringUtils.isNotBlank(orderBy)){
 			this.setOrderBy(orderBy);
@@ -110,30 +110,30 @@ public class Page<T> {
 	}
 	
 	/**
-	 * ¹¹Ôì·½·¨
-	 * @param pageNo µ±Ç°Ò³Âë
-	 * @param pageSize ·ÖÒ³´óĞ¡
+	 * æ„é€ æ–¹æ³•
+	 * @param pageNo å½“å‰é¡µç 
+	 * @param pageSize åˆ†é¡µå¤§å°
 	 */
 	public Page(int pageNo, int pageSize) {
 		this(pageNo, pageSize, 0);
 	}
 	
 	/**
-	 * ¹¹Ôì·½·¨
-	 * @param pageNo µ±Ç°Ò³Âë
-	 * @param pageSize ·ÖÒ³´óĞ¡
-	 * @param count Êı¾İÌõÊı
+	 * æ„é€ æ–¹æ³•
+	 * @param pageNo å½“å‰é¡µç 
+	 * @param pageSize åˆ†é¡µå¤§å°
+	 * @param count æ•°æ®æ¡æ•°
 	 */
 	public Page(int pageNo, int pageSize, long count) {
 		this(pageNo, pageSize, count, new ArrayList<T>());
 	}
 	
 	/**
-	 * ¹¹Ôì·½·¨
-	 * @param pageNo µ±Ç°Ò³Âë
-	 * @param pageSize ·ÖÒ³´óĞ¡
-	 * @param count Êı¾İÌõÊı
-	 * @param list ±¾Ò³Êı¾İ¶ÔÏóÁĞ±í
+	 * æ„é€ æ–¹æ³•
+	 * @param pageNo å½“å‰é¡µç 
+	 * @param pageSize åˆ†é¡µå¤§å°
+	 * @param count æ•°æ®æ¡æ•°
+	 * @param list æœ¬é¡µæ•°æ®å¯¹è±¡åˆ—è¡¨
 	 */
 	public Page(int pageNo, int pageSize, long count, List<T> list) {
 		this.setCount(count);
@@ -143,7 +143,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * ³õÊ¼»¯²ÎÊı
+	 * åˆå§‹åŒ–å‚æ•°
 	 */
 	public void initialize(){
 				
@@ -183,18 +183,18 @@ public class Page<T> {
 		}
 		
 		//2
-		if (this.pageNo < this.first) {// Èç¹ûµ±Ç°Ò³Ğ¡ÓÚÊ×Ò³
+		if (this.pageNo < this.first) {// å¦‚æœå½“å‰é¡µå°äºé¦–é¡µ
 			this.pageNo = this.first;
 		}
 
-		if (this.pageNo > this.last) {// Èç¹ûµ±Ç°Ò³´óÓÚÎ²Ò³
+		if (this.pageNo > this.last) {// å¦‚æœå½“å‰é¡µå¤§äºå°¾é¡µ
 			this.pageNo = this.last;
 		}
 		
 	}
 	
 	/**
-	 * Ä¬ÈÏÊä³öµ±Ç°·ÖÒ³±êÇ© 
+	 * é»˜è®¤è¾“å‡ºå½“å‰åˆ†é¡µæ ‡ç­¾ 
 	 * <div class="page">${page}</div>
 	 */
 	@Override
@@ -202,10 +202,10 @@ public class Page<T> {
 
 		StringBuilder sb = new StringBuilder();
 		
-		if (pageNo == first) {// Èç¹ûÊÇÊ×Ò³
-			sb.append("<li class=\"disabled\"><a href=\"javascript:\">&#171; ÉÏÒ»Ò³</a></li>\n");
+		if (pageNo == first) {// å¦‚æœæ˜¯é¦–é¡µ
+			sb.append("<li class=\"disabled\"><a href=\"javascript:\">&#171; ä¸Šä¸€é¡µ</a></li>\n");
 		} else {
-			sb.append("<li><a href=\"javascript:\" onclick=\""+funcName+"("+prev+","+pageSize+",'"+funcParam+"');\">&#171; ÉÏÒ»Ò³</a></li>\n");
+			sb.append("<li><a href=\"javascript:\" onclick=\""+funcName+"("+prev+","+pageSize+",'"+funcParam+"');\">&#171; ä¸Šä¸€é¡µ</a></li>\n");
 		}
 
 		int begin = pageNo - (length / 2);
@@ -256,18 +256,18 @@ public class Page<T> {
 		}
 
 		if (pageNo == last) {
-			sb.append("<li class=\"disabled\"><a href=\"javascript:\">ÏÂÒ»Ò³ &#187;</a></li>\n");
+			sb.append("<li class=\"disabled\"><a href=\"javascript:\">ä¸‹ä¸€é¡µ &#187;</a></li>\n");
 		} else {
 			sb.append("<li><a href=\"javascript:\" onclick=\""+funcName+"("+next+","+pageSize+",'"+funcParam+"');\">"
-					+ "ÏÂÒ»Ò³ &#187;</a></li>\n");
+					+ "ä¸‹ä¸€é¡µ &#187;</a></li>\n");
 		}
 
-		sb.append("<li class=\"disabled controls\"><a href=\"javascript:\">µ±Ç° ");
+		sb.append("<li class=\"disabled controls\"><a href=\"javascript:\">å½“å‰ ");
 		sb.append("<input type=\"text\" value=\""+pageNo+"\" onkeypress=\"var e=window.event||event;var c=e.keyCode||e.which;if(c==13)");
 		sb.append(funcName+"(this.value,"+pageSize+",'"+funcParam+"');\" onclick=\"this.select();\"/> / ");
 		sb.append("<input type=\"text\" value=\""+pageSize+"\" onkeypress=\"var e=window.event||event;var c=e.keyCode||e.which;if(c==13)");
-		sb.append(funcName+"("+pageNo+",this.value,'"+funcParam+"');\" onclick=\"this.select();\"/> Ìõ£¬");
-		sb.append("¹² " + count + " Ìõ"+(message!=null?message:"")+"</a></li>\n");
+		sb.append(funcName+"("+pageNo+",this.value,'"+funcParam+"');\" onclick=\"this.select();\"/> æ¡ï¼Œ");
+		sb.append("å…± " + count + " æ¡"+(message!=null?message:"")+"</a></li>\n");
 
 		sb.insert(0,"<ul>\n").append("</ul>\n");
 		
@@ -279,7 +279,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * »ñÈ¡·ÖÒ³HTML´úÂë
+	 * è·å–åˆ†é¡µHTMLä»£ç 
 	 * @return
 	 */
 	public String getHtml(){
@@ -289,14 +289,14 @@ public class Page<T> {
 //	public static void main(String[] args) {
 //		Page<String> p = new Page<String>(3, 3);
 //		System.out.println(p);
-//		System.out.println("Ê×Ò³£º"+p.getFirst());
-//		System.out.println("Î²Ò³£º"+p.getLast());
-//		System.out.println("ÉÏÒ³£º"+p.getPrev());
-//		System.out.println("ÏÂÒ³£º"+p.getNext());
+//		System.out.println("é¦–é¡µï¼š"+p.getFirst());
+//		System.out.println("å°¾é¡µï¼š"+p.getLast());
+//		System.out.println("ä¸Šé¡µï¼š"+p.getPrev());
+//		System.out.println("ä¸‹é¡µï¼š"+p.getNext());
 //	}
 
 	/**
-	 * »ñÈ¡ÉèÖÃ×ÜÊı
+	 * è·å–è®¾ç½®æ€»æ•°
 	 * @return
 	 */
 	public long getCount() {
@@ -304,7 +304,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÉèÖÃÊı¾İ×ÜÊı
+	 * è®¾ç½®æ•°æ®æ€»æ•°
 	 * @param count
 	 */
 	public void setCount(long count) {
@@ -315,7 +315,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°Ò³Âë
+	 * è·å–å½“å‰é¡µç 
 	 * @return
 	 */
 	public int getPageNo() {
@@ -323,7 +323,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * ÉèÖÃµ±Ç°Ò³Âë
+	 * è®¾ç½®å½“å‰é¡µç 
 	 * @param pageNo
 	 */
 	public void setPageNo(int pageNo) {
@@ -331,7 +331,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * »ñÈ¡Ò³Ãæ´óĞ¡
+	 * è·å–é¡µé¢å¤§å°
 	 * @return
 	 */
 	public int getPageSize() {
@@ -339,7 +339,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÉèÖÃÒ³Ãæ´óĞ¡£¨×î´ó500£©
+	 * è®¾ç½®é¡µé¢å¤§å°ï¼ˆæœ€å¤§500ï¼‰
 	 * @param pageSize
 	 */
 	public void setPageSize(int pageSize) {
@@ -347,7 +347,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * Ê×Ò³Ë÷Òı
+	 * é¦–é¡µç´¢å¼•
 	 * @return
 	 */
 	@JsonIgnore
@@ -356,7 +356,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * Î²Ò³Ë÷Òı
+	 * å°¾é¡µç´¢å¼•
 	 * @return
 	 */
 	@JsonIgnore
@@ -365,7 +365,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * »ñÈ¡Ò³Ãæ×ÜÊı
+	 * è·å–é¡µé¢æ€»æ•°
 	 * @return getLast();
 	 */
 	@JsonIgnore
@@ -374,7 +374,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÊÇ·ñÎªµÚÒ»Ò³
+	 * æ˜¯å¦ä¸ºç¬¬ä¸€é¡µ
 	 * @return
 	 */
 	@JsonIgnore
@@ -383,7 +383,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÊÇ·ñÎª×îºóÒ»Ò³
+	 * æ˜¯å¦ä¸ºæœ€åä¸€é¡µ
 	 * @return
 	 */
 	@JsonIgnore
@@ -392,7 +392,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * ÉÏÒ»Ò³Ë÷ÒıÖµ
+	 * ä¸Šä¸€é¡µç´¢å¼•å€¼
 	 * @return
 	 */
 	@JsonIgnore
@@ -405,7 +405,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÏÂÒ»Ò³Ë÷ÒıÖµ
+	 * ä¸‹ä¸€é¡µç´¢å¼•å€¼
 	 * @return
 	 */
 	@JsonIgnore
@@ -418,7 +418,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * »ñÈ¡±¾Ò³Êı¾İ¶ÔÏóÁĞ±í
+	 * è·å–æœ¬é¡µæ•°æ®å¯¹è±¡åˆ—è¡¨
 	 * @return List<T>
 	 */
 	public List<T> getList() {
@@ -426,7 +426,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÉèÖÃ±¾Ò³Êı¾İ¶ÔÏóÁĞ±í
+	 * è®¾ç½®æœ¬é¡µæ•°æ®å¯¹è±¡åˆ—è¡¨
 	 * @param list
 	 */
 	public Page<T> setList(List<T> list) {
@@ -436,12 +436,12 @@ public class Page<T> {
 	}
 
 	/**
-	 * »ñÈ¡²éÑ¯ÅÅĞò×Ö·û´®
+	 * è·å–æŸ¥è¯¢æ’åºå­—ç¬¦ä¸²
 	 * @return
 	 */
 	@JsonIgnore
 	public String getOrderBy() {
-		// SQL¹ıÂË£¬·ÀÖ¹×¢Èë 
+		// SQLè¿‡æ»¤ï¼Œé˜²æ­¢æ³¨å…¥ 
 		String reg = "(?:')|(?:--)|(/\\*(?:.|[\\n\\r])*?\\*/)|"
 					+ "(\\b(select|update|and|or|delete|insert|trancate|char|into|substr|ascii|declare|exec|count|master|into|drop|execute)\\b)";
 		Pattern sqlPattern = Pattern.compile(reg, Pattern.CASE_INSENSITIVE);
@@ -452,14 +452,14 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÉèÖÃ²éÑ¯ÅÅĞò£¬±ê×¼²éÑ¯ÓĞĞ§£¬ ÊµÀı£º updatedate desc, name asc
+	 * è®¾ç½®æŸ¥è¯¢æ’åºï¼Œæ ‡å‡†æŸ¥è¯¢æœ‰æ•ˆï¼Œ å®ä¾‹ï¼š updatedate desc, name asc
 	 */
 	public void setOrderBy(String orderBy) {
 		this.orderBy = orderBy;
 	}
 
 	/**
-	 * »ñÈ¡µã»÷Ò³Âëµ÷ÓÃµÄjsº¯ÊıÃû³Æ
+	 * è·å–ç‚¹å‡»é¡µç è°ƒç”¨çš„jså‡½æ•°åç§°
 	 * function ${page.funcName}(pageNo){location="${ctx}/list-${category.id}${urlSuffix}?pageNo="+i;}
 	 * @return
 	 */
@@ -469,15 +469,15 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÉèÖÃµã»÷Ò³Âëµ÷ÓÃµÄjsº¯ÊıÃû³Æ£¬Ä¬ÈÏÎªpage£¬ÔÚÒ»Ò³ÓĞ¶à¸ö·ÖÒ³¶ÔÏóÊ±Ê¹ÓÃ¡£
-	 * @param funcName Ä¬ÈÏÎªpage
+	 * è®¾ç½®ç‚¹å‡»é¡µç è°ƒç”¨çš„jså‡½æ•°åç§°ï¼Œé»˜è®¤ä¸ºpageï¼Œåœ¨ä¸€é¡µæœ‰å¤šä¸ªåˆ†é¡µå¯¹è±¡æ—¶ä½¿ç”¨ã€‚
+	 * @param funcName é»˜è®¤ä¸ºpage
 	 */
 	public void setFuncName(String funcName) {
 		this.funcName = funcName;
 	}
 
 	/**
-	 * »ñÈ¡·ÖÒ³º¯ÊıµÄ¸½¼Ó²ÎÊı
+	 * è·å–åˆ†é¡µå‡½æ•°çš„é™„åŠ å‚æ•°
 	 * @return
 	 */
 	@JsonIgnore
@@ -486,7 +486,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÉèÖÃ·ÖÒ³º¯ÊıµÄ¸½¼Ó²ÎÊı
+	 * è®¾ç½®åˆ†é¡µå‡½æ•°çš„é™„åŠ å‚æ•°
 	 * @return
 	 */
 	public void setFuncParam(String funcParam) {
@@ -494,7 +494,7 @@ public class Page<T> {
 	}
 
 	/**
-	 * ÉèÖÃÌáÊ¾ÏûÏ¢£¬ÏÔÊ¾ÔÚ¡°¹²nÌõ¡±Ö®ºó
+	 * è®¾ç½®æç¤ºæ¶ˆæ¯ï¼Œæ˜¾ç¤ºåœ¨â€œå…±næ¡â€ä¹‹å
 	 * @param message
 	 */
 	public void setMessage(String message) {
@@ -502,7 +502,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * ·ÖÒ³ÊÇ·ñÓĞĞ§
+	 * åˆ†é¡µæ˜¯å¦æœ‰æ•ˆ
 	 * @return this.pageSize==-1
 	 */
 	@JsonIgnore
@@ -511,7 +511,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * ÊÇ·ñ½øĞĞ×ÜÊıÍ³¼Æ
+	 * æ˜¯å¦è¿›è¡Œæ€»æ•°ç»Ÿè®¡
 	 * @return this.count==-1
 	 */
 	@JsonIgnore
@@ -520,7 +520,7 @@ public class Page<T> {
 	}
 	
 	/**
-	 * »ñÈ¡ Hibernate FirstResult
+	 * è·å– Hibernate FirstResult
 	 */
 	public int getFirstResult(){
 		int firstResult = (getPageNo() - 1) * getPageSize();
@@ -530,14 +530,14 @@ public class Page<T> {
 		return firstResult;
 	}
 	/**
-	 * »ñÈ¡ Hibernate MaxResults
+	 * è·å– Hibernate MaxResults
 	 */
 	public int getMaxResults(){
 		return getPageSize();
 	}
 
 //	/**
-//	 * »ñÈ¡ Spring data JPA ·ÖÒ³¶ÔÏó
+//	 * è·å– Spring data JPA åˆ†é¡µå¯¹è±¡
 //	 */
 //	public Pageable getSpringPage(){
 //		List<Order> orders = new ArrayList<Order>();
@@ -559,7 +559,7 @@ public class Page<T> {
 //	}
 //	
 //	/**
-//	 * ÉèÖÃ Spring data JPA ·ÖÒ³¶ÔÏó£¬×ª»»Îª±¾ÏµÍ³·ÖÒ³¶ÔÏó
+//	 * è®¾ç½® Spring data JPA åˆ†é¡µå¯¹è±¡ï¼Œè½¬æ¢ä¸ºæœ¬ç³»ç»Ÿåˆ†é¡µå¯¹è±¡
 //	 */
 //	public void setSpringPage(org.springframework.data.domain.Page<T> page){
 //		this.pageNo = page.getNumber();

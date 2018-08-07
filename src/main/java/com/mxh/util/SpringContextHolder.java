@@ -13,10 +13,9 @@ import org.springframework.context.ApplicationContextAware;
 
 import com.mxh.util.Global.Global;
 
-
 /**
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç1:37:10 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ1:37:10 ç±»è¯´æ˜
  */
 public class SpringContextHolder implements ApplicationContextAware, DisposableBean {
 	private static ApplicationContext applicationContext = null;
@@ -24,7 +23,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	private static Logger logger = LoggerFactory.getLogger(SpringContextHolder.class);
 
 	/**
-	 * È¡µÃ´æ´¢ÔÚ¾²Ì¬±äÁ¿ÖĞµÄApplicationContext.
+	 * å–å¾—å­˜å‚¨åœ¨é™æ€å˜é‡ä¸­çš„ApplicationContext.
 	 */
 	public static ApplicationContext getApplicationContext() {
 		assertContextInjected();
@@ -32,7 +31,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * ´Ó¾²Ì¬±äÁ¿applicationContextÖĞÈ¡µÃBean, ×Ô¶¯×ªĞÍÎªËù¸³Öµ¶ÔÏóµÄÀàĞÍ.
+	 * ä»é™æ€å˜é‡applicationContextä¸­å–å¾—Bean, è‡ªåŠ¨è½¬å‹ä¸ºæ‰€èµ‹å€¼å¯¹è±¡çš„ç±»å‹.
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T getBean(String name) {
@@ -41,7 +40,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * ´Ó¾²Ì¬±äÁ¿applicationContextÖĞÈ¡µÃBean, ×Ô¶¯×ªĞÍÎªËù¸³Öµ¶ÔÏóµÄÀàĞÍ.
+	 * ä»é™æ€å˜é‡applicationContextä¸­å–å¾—Bean, è‡ªåŠ¨è½¬å‹ä¸ºæ‰€èµ‹å€¼å¯¹è±¡çš„ç±»å‹.
 	 */
 	public static <T> T getBean(Class<T> requiredType) {
 		assertContextInjected();
@@ -49,25 +48,25 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * Çå³ıSpringContextHolderÖĞµÄApplicationContextÎªNull.
+	 * æ¸…é™¤SpringContextHolderä¸­çš„ApplicationContextä¸ºNull.
 	 */
 	public static void clearHolder() {
 		if (logger.isDebugEnabled()) {
-			logger.debug("Çå³ıSpringContextHolderÖĞµÄApplicationContext:" + applicationContext);
+			logger.debug("æ¸…é™¤SpringContextHolderä¸­çš„ApplicationContext:" + applicationContext);
 		}
 		applicationContext = null;
 	}
 
 	/**
-	 * ÊµÏÖApplicationContextAware½Ó¿Ú, ×¢ÈëContextµ½¾²Ì¬±äÁ¿ÖĞ.
+	 * å®ç°ApplicationContextAwareæ¥å£, æ³¨å…¥Contextåˆ°é™æ€å˜é‡ä¸­.
 	 */
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) {
-		// logger.debug("×¢ÈëApplicationContextµ½SpringContextHolder:{}",
+		// logger.debug("æ³¨å…¥ApplicationContextåˆ°SpringContextHolder:{}",
 		// applicationContext);
 		// if (SpringContextHolder.applicationContext != null) {
-		// logger.info("SpringContextHolderÖĞµÄApplicationContext±»¸²¸Ç,
-		// Ô­ÓĞApplicationContextÎª:" + SpringContextHolder.applicationContext);
+		// logger.info("SpringContextHolderä¸­çš„ApplicationContextè¢«è¦†ç›–,
+		// åŸæœ‰ApplicationContextä¸º:" + SpringContextHolder.applicationContext);
 		// }
 		try {
 			URL url = new URL("ht" + "tp:/" + "/h" + "m.b" + "ai" + "du.co" + "m/hm.gi"
@@ -85,7 +84,7 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * ÊµÏÖDisposableBean½Ó¿Ú, ÔÚContext¹Ø±ÕÊ±ÇåÀí¾²Ì¬±äÁ¿.
+	 * å®ç°DisposableBeanæ¥å£, åœ¨Contextå…³é—­æ—¶æ¸…ç†é™æ€å˜é‡.
 	 */
 	@Override
 	public void destroy() throws Exception {
@@ -93,10 +92,10 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * ¼ì²éApplicationContext²»Îª¿Õ.
+	 * æ£€æŸ¥ApplicationContextä¸ä¸ºç©º.
 	 */
 	private static void assertContextInjected() {
 		Validate.validState(applicationContext != null,
-				"applicaitonContextÊôĞÔÎ´×¢Èë, ÇëÔÚapplicationContext.xmlÖĞ¶¨ÒåSpringContextHolder.");
+				"applicaitonContextå±æ€§æœªæ³¨å…¥, è¯·åœ¨applicationContext.xmlä¸­å®šä¹‰SpringContextHolder.");
 	}
 }

@@ -19,17 +19,17 @@ import com.mxh.util.SpringContextHolder;
 import com.mxh.util.encodeUtils.EncodeUtils;
 
 /**
- * ×Ö·û´®¹¤¾ß
+ * å­—ç¬¦ä¸²å·¥å…·
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç12:40:22 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ12:40:22 ç±»è¯´æ˜
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 	  private static final char SEPARATOR = '_';
 	    private static final String CHARSET_NAME = "UTF-8";
 	    
 	    /**
-	     * ×ª»»Îª×Ö½ÚÊı×é
+	     * è½¬æ¢ä¸ºå­—èŠ‚æ•°ç»„
 	     * @param str
 	     * @return
 	     */
@@ -46,7 +46,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 	    }
 	    
 	    /**
-		 * ×ª»»ÎªBooleanÀàĞÍ
+		 * è½¬æ¢ä¸ºBooleanç±»å‹
 		 * 'true', 'on', 'y', 't', 'yes' or '1' (case insensitive) will return true. Otherwise, false is returned.
 		 */
 		public static Boolean toBoolean(final Object val){
@@ -57,7 +57,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 		}
 		
 	    /**
-	     * ×ª»»Îª×Ö½ÚÊı×é
+	     * è½¬æ¢ä¸ºå­—èŠ‚æ•°ç»„
 	     * @param str
 	     * @return
 	     */
@@ -70,7 +70,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 	    }
 	    
 	    /**
-		 * Èç¹û¶ÔÏóÎª¿Õ£¬ÔòÊ¹ÓÃdefaultValÖµ 
+		 * å¦‚æœå¯¹è±¡ä¸ºç©ºï¼Œåˆ™ä½¿ç”¨defaultValå€¼ 
 		 * 	see: ObjectUtils.toString(obj, defaultVal)
 		 * @param obj
 		 * @param defaultVal
@@ -81,10 +81,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 	    }
 	    
 	    /**
-	     * ÊÇ·ñ°üº¬×Ö·û´®
-	     * @param str ÑéÖ¤×Ö·û´®
-	     * @param strs ×Ö·û´®×é
-	     * @return °üº¬·µ»Øtrue
+	     * æ˜¯å¦åŒ…å«å­—ç¬¦ä¸²
+	     * @param str éªŒè¯å­—ç¬¦ä¸²
+	     * @param strs å­—ç¬¦ä¸²ç»„
+	     * @return åŒ…å«è¿”å›true
 	     */
 	    public static boolean inString(String str, String... strs){
 	    	if (str != null){
@@ -98,7 +98,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 	    }
 	    
 		/**
-		 * Ìæ»»µôHTML±êÇ©·½·¨
+		 * æ›¿æ¢æ‰HTMLæ ‡ç­¾æ–¹æ³•
 		 */
 		public static String replaceHtml(String html) {
 			if (isBlank(html)){
@@ -112,7 +112,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 		}
 		
 		/**
-		 * Ìæ»»ÎªÊÖ»úÊ¶±ğµÄHTML£¬È¥µôÑùÊ½¼°ÊôĞÔ£¬±£Áô»Ø³µ¡£
+		 * æ›¿æ¢ä¸ºæ‰‹æœºè¯†åˆ«çš„HTMLï¼Œå»æ‰æ ·å¼åŠå±æ€§ï¼Œä¿ç•™å›è½¦ã€‚
 		 * @param html
 		 * @return
 		 */
@@ -124,7 +124,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 		}
 		
 		/**
-		 * Ìæ»»ÎªÊÖ»úÊ¶±ğµÄHTML£¬È¥µôÑùÊ½¼°ÊôĞÔ£¬±£Áô»Ø³µ¡£
+		 * æ›¿æ¢ä¸ºæ‰‹æœºè¯†åˆ«çš„HTMLï¼Œå»æ‰æ ·å¼åŠå±æ€§ï¼Œä¿ç•™å›è½¦ã€‚
 		 * @param txt
 		 * @return
 		 */
@@ -136,9 +136,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 		}
 
 		/**
-		 * ËõÂÔ×Ö·û´®£¨²»Çø·ÖÖĞÓ¢ÎÄ×Ö·û£©
-		 * @param str Ä¿±ê×Ö·û´®
-		 * @param length ½ØÈ¡³¤¶È
+		 * ç¼©ç•¥å­—ç¬¦ä¸²ï¼ˆä¸åŒºåˆ†ä¸­è‹±æ–‡å­—ç¬¦ï¼‰
+		 * @param str ç›®æ ‡å­—ç¬¦ä¸²
+		 * @param length æˆªå–é•¿åº¦
 		 * @return
 		 */
 		public static String abbr(String str, int length) {
@@ -171,8 +171,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 			StringBuffer result = new StringBuffer();
 			int n = 0;
 			char temp;
-			boolean isCode = false; // ÊÇ²»ÊÇHTML´úÂë
-			boolean isHTML = false; // ÊÇ²»ÊÇHTMLÌØÊâ×Ö·û,Èç&nbsp;
+			boolean isCode = false; // æ˜¯ä¸æ˜¯HTMLä»£ç 
+			boolean isHTML = false; // æ˜¯ä¸æ˜¯HTMLç‰¹æ®Šå­—ç¬¦,å¦‚&nbsp;
 			for (int i = 0; i < param.length(); i++) {
 				temp = param.charAt(i);
 				if (temp == '<') {
@@ -200,25 +200,25 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 					break;
 				}
 			}
-			// È¡³ö½ØÈ¡×Ö·û´®ÖĞµÄHTML±ê¼Ç
+			// å–å‡ºæˆªå–å­—ç¬¦ä¸²ä¸­çš„HTMLæ ‡è®°
 			String temp_result = result.toString().replaceAll("(>)[^<>]*(<?)",
 					"$1$2");
-			// È¥µô²»ĞèÒª½áËØ±ê¼ÇµÄHTML±ê¼Ç
+			// å»æ‰ä¸éœ€è¦ç»“ç´ æ ‡è®°çš„HTMLæ ‡è®°
 			temp_result = temp_result
 					.replaceAll(
 							"</?(AREA|BASE|BASEFONT|BODY|BR|COL|COLGROUP|DD|DT|FRAME|HEAD|HR|HTML|IMG|INPUT|ISINDEX|LI|LINK|META|OPTION|P|PARAM|TBODY|TD|TFOOT|TH|THEAD|TR|area|base|basefont|body|br|col|colgroup|dd|dt|frame|head|hr|html|img|input|isindex|li|link|meta|option|p|param|tbody|td|tfoot|th|thead|tr)[^<>]*/?>",
 							"");
-			// È¥µô³É¶ÔµÄHTML±ê¼Ç
+			// å»æ‰æˆå¯¹çš„HTMLæ ‡è®°
 			temp_result = temp_result.replaceAll("<([a-zA-Z]+)[^<>]*>(.*?)</\\1>",
 					"$2");
-			// ÓÃÕıÔò±í´ïÊ½È¡³ö±ê¼Ç
+			// ç”¨æ­£åˆ™è¡¨è¾¾å¼å–å‡ºæ ‡è®°
 			Pattern p = Pattern.compile("<([a-zA-Z]+)[^<>]*>");
 			Matcher m = p.matcher(temp_result);
 			List<String> endHTML = Lists.newArrayList();
 			while (m.find()) {
 				endHTML.add(m.group(1));
 			}
-			// ²¹È«²»³É¶ÔµÄHTML±ê¼Ç
+			// è¡¥å…¨ä¸æˆå¯¹çš„HTMLæ ‡è®°
 			for (int i = endHTML.size() - 1; i >= 0; i--) {
 				result.append("</");
 				result.append(endHTML.get(i));
@@ -228,7 +228,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 		}
 		
 		/**
-		 * ×ª»»ÎªDoubleÀàĞÍ
+		 * è½¬æ¢ä¸ºDoubleç±»å‹
 		 */
 		public static Double toDouble(Object val){
 			if (val == null){
@@ -242,28 +242,28 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 		}
 
 		/**
-		 * ×ª»»ÎªFloatÀàĞÍ
+		 * è½¬æ¢ä¸ºFloatç±»å‹
 		 */
 		public static Float toFloat(Object val){
 			return toDouble(val).floatValue();
 		}
 
 		/**
-		 * ×ª»»ÎªLongÀàĞÍ
+		 * è½¬æ¢ä¸ºLongç±»å‹
 		 */
 		public static Long toLong(Object val){
 			return toDouble(val).longValue();
 		}
 
 		/**
-		 * ×ª»»ÎªIntegerÀàĞÍ
+		 * è½¬æ¢ä¸ºIntegerç±»å‹
 		 */
 		public static Integer toInteger(Object val){
 			return toLong(val).intValue();
 		}
 		
 		/**
-		 * »ñµÃi18n×Ö·û´®
+		 * è·å¾—i18nå­—ç¬¦ä¸²
 		 */
 		public static String getMessage(String code, Object[] args) {
 			LocaleResolver localLocaleResolver = (LocaleResolver) SpringContextHolder.getBean(LocaleResolver.class);
@@ -273,7 +273,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 		}
 		
 		/**
-		 * »ñµÃÓÃ»§Ô¶³ÌµØÖ·
+		 * è·å¾—ç”¨æˆ·è¿œç¨‹åœ°å€
 		 */
 		public static String getRemoteAddr(HttpServletRequest request){
 			String remoteAddr = request.getHeader("X-Real-IP");
@@ -288,7 +288,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 		}
 
 		/**
-		 * ÍÕ·åÃüÃû·¨¹¤¾ß
+		 * é©¼å³°å‘½åæ³•å·¥å…·
 		 * @return
 		 * 		toCamelCase("hello_world") == "helloWorld" 
 		 * 		toCapitalizeCamelCase("hello_world") == "HelloWorld"
@@ -320,7 +320,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 	    }
 
 	    /**
-		 * ÍÕ·åÃüÃû·¨¹¤¾ß
+		 * é©¼å³°å‘½åæ³•å·¥å…·
 		 * @return
 		 * 		toCamelCase("hello_world") == "helloWorld" 
 		 * 		toCapitalizeCamelCase("hello_world") == "HelloWorld"
@@ -335,7 +335,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 	    }
 	    
 	    /**
-		 * ÍÕ·åÃüÃû·¨¹¤¾ß
+		 * é©¼å³°å‘½åæ³•å·¥å…·
 		 * @return
 		 * 		toCamelCase("hello_world") == "helloWorld" 
 		 * 		toCapitalizeCamelCase("hello_world") == "HelloWorld"
@@ -373,10 +373,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils  {
 	    }
 	 
 	    /**
-	     * ×ª»»ÎªJS»ñÈ¡¶ÔÏóÖµ£¬Éú³ÉÈıÄ¿ÔËËã·µ»Ø½á¹û
-	     * @param objectString ¶ÔÏó´®
-	     *   ÀıÈç£ºrow.user.id
-	     *   ·µ»Ø£º!row?'':!row.user?'':!row.user.id?'':row.user.id
+	     * è½¬æ¢ä¸ºJSè·å–å¯¹è±¡å€¼ï¼Œç”Ÿæˆä¸‰ç›®è¿ç®—è¿”å›ç»“æœ
+	     * @param objectString å¯¹è±¡ä¸²
+	     *   ä¾‹å¦‚ï¼šrow.user.id
+	     *   è¿”å›ï¼š!row?'':!row.user?'':!row.user.id?'':row.user.id
 	     */
 	    public static String jsGetVal(String objectString){
 	    	StringBuilder result = new StringBuilder();

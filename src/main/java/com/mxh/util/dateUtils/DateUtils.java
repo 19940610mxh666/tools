@@ -1,10 +1,10 @@
 package com.mxh.util.dateUtils;
 
 /**
- * ÈÕÆÚ×ª»»¹¤¾ß
+ * æ—¥æœŸè½¬æ¢å·¥å…·
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç12:39:47 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ12:39:47 ç±»è¯´æ˜
  */
 public class DateUtils {
 

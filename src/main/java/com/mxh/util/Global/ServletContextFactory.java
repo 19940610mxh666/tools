@@ -4,7 +4,7 @@ import javax.servlet.ServletContext;
 
 /**
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç1:53:40 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ1:53:40 ç±»è¯´æ˜
  */
 public class ServletContextFactory {
 	private static ServletContext servletContext;

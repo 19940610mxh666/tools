@@ -13,11 +13,11 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
 /**
- * PropertiesÎÄ¼şÔØÈë¹¤¾ßÀà. ¿ÉÔØÈë¶à¸öpropertiesÎÄ¼ş,
- * ÏàÍ¬µÄÊôĞÔÔÚ×îºóÔØÈëµÄÎÄ¼şÖĞµÄÖµ½«»á¸²¸ÇÖ®Ç°µÄÖµ£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ.
+ * Propertiesæ–‡ä»¶è½½å…¥å·¥å…·ç±». å¯è½½å…¥å¤šä¸ªpropertiesæ–‡ä»¶,
+ * ç›¸åŒçš„å±æ€§åœ¨æœ€åè½½å…¥çš„æ–‡ä»¶ä¸­çš„å€¼å°†ä¼šè¦†ç›–ä¹‹å‰çš„å€¼ï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ.
  * 
  * @author mxh
- * @version ´´½¨Ê±¼ä£º2018Äê8ÔÂ7ÈÕÉÏÎç1:41:07 ÀàËµÃ÷
+ * @version åˆ›å»ºæ—¶é—´ï¼š2018å¹´8æœˆ7æ—¥ä¸Šåˆ1:41:07 ç±»è¯´æ˜
  */
 public class PropertiesLoader {
 	private static Logger logger = LoggerFactory.getLogger(PropertiesLoader.class);
@@ -35,7 +35,7 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ,È¡²»µ½·µ»Ø¿Õ×Ö·û´®.
+	 * å–å‡ºPropertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ,å–ä¸åˆ°è¿”å›ç©ºå­—ç¬¦ä¸².
 	 */
 	private String getValue(String key) {
 		String systemProperty = System.getProperty(key);
@@ -49,7 +49,7 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öStringÀàĞÍµÄProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ,Èç¹û¶¼ÎªNullÔòÅ×³öÒì³£.
+	 * å–å‡ºStringç±»å‹çš„Propertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ,å¦‚æœéƒ½ä¸ºNullåˆ™æŠ›å‡ºå¼‚å¸¸.
 	 */
 	public String getProperty(String key) {
 		String value = getValue(key);
@@ -60,7 +60,7 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öStringÀàĞÍµÄProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ.Èç¹û¶¼ÎªNullÔò·µ»ØDefaultÖµ.
+	 * å–å‡ºStringç±»å‹çš„Propertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ.å¦‚æœéƒ½ä¸ºNullåˆ™è¿”å›Defaultå€¼.
 	 */
 	public String getProperty(String key, String defaultValue) {
 		String value = getValue(key);
@@ -68,7 +68,7 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öIntegerÀàĞÍµÄProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ.Èç¹û¶¼ÎªNull»òÄÚÈİ´íÎóÔòÅ×³öÒì³£.
+	 * å–å‡ºIntegerç±»å‹çš„Propertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ.å¦‚æœéƒ½ä¸ºNullæˆ–å†…å®¹é”™è¯¯åˆ™æŠ›å‡ºå¼‚å¸¸.
 	 */
 	public Integer getInteger(String key) {
 		String value = getValue(key);
@@ -79,7 +79,7 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öIntegerÀàĞÍµÄProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ.Èç¹û¶¼ÎªNullÔò·µ»ØDefaultÖµ£¬Èç¹ûÄÚÈİ´íÎóÔòÅ×³öÒì³£
+	 * å–å‡ºIntegerç±»å‹çš„Propertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ.å¦‚æœéƒ½ä¸ºNullåˆ™è¿”å›Defaultå€¼ï¼Œå¦‚æœå†…å®¹é”™è¯¯åˆ™æŠ›å‡ºå¼‚å¸¸
 	 */
 	public Integer getInteger(String key, Integer defaultValue) {
 		String value = getValue(key);
@@ -87,7 +87,7 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öDoubleÀàĞÍµÄProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ.Èç¹û¶¼ÎªNull»òÄÚÈİ´íÎóÔòÅ×³öÒì³£.
+	 * å–å‡ºDoubleç±»å‹çš„Propertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ.å¦‚æœéƒ½ä¸ºNullæˆ–å†…å®¹é”™è¯¯åˆ™æŠ›å‡ºå¼‚å¸¸.
 	 */
 	public Double getDouble(String key) {
 		String value = getValue(key);
@@ -98,7 +98,7 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öDoubleÀàĞÍµÄProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ.Èç¹û¶¼ÎªNullÔò·µ»ØDefaultÖµ£¬Èç¹ûÄÚÈİ´íÎóÔòÅ×³öÒì³£
+	 * å–å‡ºDoubleç±»å‹çš„Propertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ.å¦‚æœéƒ½ä¸ºNullåˆ™è¿”å›Defaultå€¼ï¼Œå¦‚æœå†…å®¹é”™è¯¯åˆ™æŠ›å‡ºå¼‚å¸¸
 	 */
 	public Double getDouble(String key, Integer defaultValue) {
 		String value = getValue(key);
@@ -106,8 +106,8 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öBooleanÀàĞÍµÄProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ.Èç¹û¶¼ÎªNullÅ×³öÒì³£,Èç¹ûÄÚÈİ²»ÊÇtrue/
-	 * falseÔò·µ»Øfalse.
+	 * å–å‡ºBooleanç±»å‹çš„Propertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ.å¦‚æœéƒ½ä¸ºNullæŠ›å‡ºå¼‚å¸¸,å¦‚æœå†…å®¹ä¸æ˜¯true/
+	 * falseåˆ™è¿”å›false.
 	 */
 	public Boolean getBoolean(String key) {
 		String value = getValue(key);
@@ -118,8 +118,8 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * È¡³öBooleanÀàĞÍµÄProperty£¬µ«ÒÔSystemµÄPropertyÓÅÏÈ.Èç¹û¶¼ÎªNullÔò·µ»ØDefaultÖµ,Èç¹ûÄÚÈİ²»Îªtrue/
-	 * falseÔò·µ»Øfalse.
+	 * å–å‡ºBooleanç±»å‹çš„Propertyï¼Œä½†ä»¥Systemçš„Propertyä¼˜å…ˆ.å¦‚æœéƒ½ä¸ºNullåˆ™è¿”å›Defaultå€¼,å¦‚æœå†…å®¹ä¸ä¸ºtrue/
+	 * falseåˆ™è¿”å›false.
 	 */
 	public Boolean getBoolean(String key, boolean defaultValue) {
 		String value = getValue(key);
@@ -127,7 +127,7 @@ public class PropertiesLoader {
 	}
 
 	/**
-	 * ÔØÈë¶à¸öÎÄ¼ş, ÎÄ¼şÂ·¾¶Ê¹ÓÃSpring Resource¸ñÊ½.
+	 * è½½å…¥å¤šä¸ªæ–‡ä»¶, æ–‡ä»¶è·¯å¾„ä½¿ç”¨Spring Resourceæ ¼å¼.
 	 */
 	private Properties loadProperties(String... resourcesPaths) {
 		Properties props = new Properties();
