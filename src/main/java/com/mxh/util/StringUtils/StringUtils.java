@@ -16,7 +16,7 @@ import org.springframework.web.servlet.LocaleResolver;
 
 import com.google.common.collect.Lists;
 import com.mxh.util.SpringContextHolder;
-import com.mxh.util.encode.EncodeUtils;
+import com.mxh.util.encodeUtils.EncodeUtils;
 
 /**
  * ×Ö·û´®¹¤¾ß

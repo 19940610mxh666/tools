@@ -9,7 +9,7 @@ import org.springframework.core.io.DefaultResourceLoader;
 
 import com.google.common.collect.Maps;
 import com.mxh.util.StringUtils.StringUtils;
-import com.mxh.util.mail.EmailBean;
+import com.mxh.util.mailUtils.EmailBean;
 import com.mxh.util.propertiesUtils.PropertiesLoader;
 
 

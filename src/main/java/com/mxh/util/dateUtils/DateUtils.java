@@ -1,4 +1,4 @@
-package com.mxh.util.DateUtils;
+package com.mxh.util.dateUtils;
 
 /**
  * 日期转换工具

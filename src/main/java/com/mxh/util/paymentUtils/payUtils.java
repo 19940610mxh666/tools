@@ -1,4 +1,4 @@
-package com.mxh.util.payment;
+package com.mxh.util.paymentUtils;
 
 /**
  * 支付宝、微信等接口

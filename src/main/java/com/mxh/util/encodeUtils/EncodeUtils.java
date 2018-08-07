@@ -1,4 +1,4 @@
-package com.mxh.util.encode;
+package com.mxh.util.encodeUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -9,7 +9,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringEscapeUtils;
 
-import com.mxh.util.ExceptionUtils.ExceptionUtils;
+import com.mxh.util.exceptionUtils.ExceptionUtils;
 
 /**
  * ±àÂë¹¤¾ß

@@ -1,4 +1,4 @@
-package com.mxh.util.CrudUtils;
+package com.mxh.util.crudUtils;
 
 /**
  * CRUDπ§æﬂ¿‡

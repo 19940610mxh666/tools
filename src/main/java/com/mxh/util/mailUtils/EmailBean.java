@@ -1,4 +1,4 @@
-package com.mxh.util.mail;
+package com.mxh.util.mailUtils;
 
 import java.util.Vector;
 

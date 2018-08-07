@@ -1,4 +1,4 @@
-package com.mxh.util.ExceptionUtils;
+package com.mxh.util.exceptionUtils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

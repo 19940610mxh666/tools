@@ -1,4 +1,4 @@
-package com.mxh.util.excel;
+package com.mxh.util.excelUtils;
 
 /**
  * 生成excel表格
